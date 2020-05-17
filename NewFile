@@ -2,4 +2,4 @@ Cteate a Nefile
 
 I added one more line to this file
 
-Added one more new line for check command: git log HEAD.origin
+Added one more new line for check command: git log HEAD..origin
