@@ -3,3 +3,22 @@ Cteate a Nefile
 I added one more line to this file
 
 Added one more new line for check command: git log HEAD..origin
+  08:26 $ git log HEAD..origin
+  commit 9a085a3020d25bec079bf6b26b51366e03686807
+  Author: 802-11ez <47504593+802-11ez@users.noreply.github.com>
+  Date:   Sun May 17 15:26:14 2020 +0300
+
+      Update NewFile
+
+... and command: git diff HEAD..origin
+  08:26 $ git diff HEAD..origin
+  diff --git a/NewFile b/NewFile
+  index 12f1877..8545548 100644
+  --- a/NewFile
+  +++ b/NewFile
+  @@ -1,3 +1,5 @@
+   Cteate a Nefile
+
+  I added one more line to this file
+  +
+  +Added one more new line for check command: git log HEAD.origin
