@@ -23,11 +23,14 @@ print('Длина строки "vlan "             :', lenght_str)
 print('Начальная позиция строки "vlan " :', in_char)
 print('Строка с номарами vlan           :', vlan_ids)
 print('Список номеров vlan              :', vlan_ids_list, '\n')
+
 print('-' * 70)
 print('The second way by using the methods str.split() and str.split(',')')                                          
 print('-' * 70, '\n')
+
 config_split = config.split()
 vlan_ids = config_split[-1].split(',')
+
 print('Строка с номарами vlan           :', config_split[-1])
 print('Список номеров vlan              :', vlan_ids, '\n')
 print('-' * 70, '\n')
