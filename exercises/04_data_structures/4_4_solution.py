@@ -12,7 +12,21 @@ print('''
 ''')
 
 print('-' * 70)
-print('The best way by using the method str.replace().')
+print('The best way by using the converting method from list() to set().')
 print('-' * 70, '\n')
 
 vlans = [10, 20, 30, 1, 2, 100, 10, 30, 3, 4, 10]
+
+# Выводим на экран текущий список VLAN
+print(vlans, '\n')
+
+# Преобразуем список в множество для удаления из списка повторяющихся VLAN ID
+vlan_ids = set(vlans)
+
+# Преобразуем множество обратно в список и сортируем его по возрастанию
+vlan_ids = sorted(list(vlan_ids))
+
+# Выводим на экран результат решения задания
+print('-' * 70, '\n')
+print(vlan_ids, '\n')
+print('-' * 70, '\n')
