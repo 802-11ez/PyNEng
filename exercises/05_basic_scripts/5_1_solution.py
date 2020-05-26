@@ -50,6 +50,16 @@ london_co = {
 
 hostname = input('Введите имя устройства (r1, r2, или sw1): ')
 
+print('-' * 70, '\n')
+print('Для вывода на экран требуемого по заданию словаря воспользуемся командой print()')
+print('-' * 70, '\n')
+
+print(london_co[hostname], '\n')
+
+print('-' * 70, '\n')
+
+print('Вывод результата на экран с помощью форматирования строк str.format()', '\n')
+
 if hostname == 'sw1':
     template = '''
                 Location   : {location}
