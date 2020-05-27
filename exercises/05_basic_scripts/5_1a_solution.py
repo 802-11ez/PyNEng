@@ -48,6 +48,6 @@ print('''Для вывода на экран требуемого по зада�
 воспользуемся командой print()''', '\n')
 print('-' * 70, '\n')
 
-print(london_co[hostname][item], '\n')
+print(item.upper(), ':', london_co[hostname][item.lower()], '\n')
 
 print('-' * 70, '\n')
