@@ -34,14 +34,14 @@ mask_template = '''    Mask:
     {0:08b} {1:08b} {2:08b} {3:08b}
     '''
 ip_l = ip.split('/')
-    
+
 ip_add_str = ip_l[0]
 mask_str = ip_l[1]
 
 oct1, oct2, oct3, oct4 = ip_add_str.split('.')
 
 ip_add_int_l = [int(oct1), int(oct2), int(oct3), int(oct4)]
-    
+
 mask_int = int(mask_str)
 
 ip_bin_str = '{:08b}{:08b}{:08b}{:08b}'.format(ip_add_int_l[0], ip_add_int_l[1], ip_add_int_l[2], ip_add_int_l[3])
