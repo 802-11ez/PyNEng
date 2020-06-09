@@ -33,24 +33,59 @@ mask_template = '''    Mask:
     {0:<8} {1:<8} {2:<8} {3:<8}
     {0:08b} {1:08b} {2:08b} {3:08b}
     '''
+
+# Отделяем IP адрес от маски и записываем строки в список
+
 ip_l = ip.split('/')
+
+# Сопоставляем строки с переменными
 
 ip_add_str = ip_l[0]
 mask_str = ip_l[1]
 
+# Распаковываем строку IP адреса в переменные
+
 oct1, oct2, oct3, oct4 = ip_add_str.split('.')
+
+# Преобразуем строки в числа
 
 ip_add_int_l = [int(oct1), int(oct2), int(oct3), int(oct4)]
 
 mask_int = int(mask_str)
 
+# Находим бинарные значения для октетов IP адреса и записываем в строку
+
 ip_bin_str = '{:08b}{:08b}{:08b}{:08b}'.format(ip_add_int_l[0], ip_add_int_l[1], ip_add_int_l[2], ip_add_int_l[3])
 
+# Создаем бинарную строку маски
+# 1-й способ - конкатенация строк
+
 mask_bin_str = '1' * int(mask_str) + '0' * (32 - int(mask_str))
+
+# 2-й способ с помошью метода str.ljust(s, width[, fillchar]),
+# где:
+# s - Строка, которую требуется расширить
+# width - Желаемая минимальная длина результирующей строки.
+# fillchar - Символ, которым следует расширять строку. По умолчанию — пробел.
+
+mask_bin_str = ('1' * int(mask_str)).ljust(32, '0')
+
+# Разрезаем бинарную строку маски на октеты
+
 mask_bin_l = mask_bin_str[0:8], mask_bin_str[8:16], mask_bin_str[16:24], mask_bin_str[24:]
+
+# Находим десятичные значения октетов маски
+
 mask_dec_l = int(mask_bin_l[0], 2), int(mask_bin_l[1], 2), int(mask_bin_l[2], 2), int(mask_bin_l[3], 2)
 
+# Находим бинарное значение строки IP адреса сети
+# 1-й способ - конкатенация строк
+
 net_ip_bin_str = ip_bin_str[:mask_int] + '0' * (32 - mask_int)
+
+# 2-й способ с помошью метода str.ljust(s, width[, fillchar])
+
+net_ip_bin_str = ip_bin_str[:mask_int].ljust(32, '0')
 
 net_ip_bin_l = net_ip_bin_str[0:8], net_ip_bin_str[8:16], net_ip_bin_str[16:24], net_ip_bin_str[24:]
 
