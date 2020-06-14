@@ -39,4 +39,4 @@ elif ip == '0.0.0.0':
     print('IP address - ', ip, 'is unassigned\n')
 else:
     print('IP address - ', ip, 'is unused\n')
-    print('-' * 70, '\n')
+print('-' * 70, '\n')
