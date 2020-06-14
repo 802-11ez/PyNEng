@@ -19,19 +19,19 @@ ip_l = ip.split('.')
 
 if len(ip_l) != 4:
     print('-' * 70, '\n')
-    print('Неверный IP-адрес Lenght is not equal 4.', '\n')
+    print('Wrong IP.', 'IP address have more or less octets than 4.', '\n')
 elif any(oct == '' for oct in ip_l):
     print('-' * 70, '\n')
-    print('Неверный IP-адрес One or more octets is empty.', '\n')
+    print('Wrong IP.', 'One or more octets is empty.', '\n')
 elif any(oct.isalpha() for oct in ip_l):
     print('-' * 70, '\n')
-    print('Неверный IP-адрес isalpha()', '\n')
+    print('Wrong IP.', 'One or more octets contains letters.', '\n')
 elif not all(oct.isdigit() for oct in ip_l):
     print('-' * 70, '\n')
-    print('Неверный IP-адрес isdigit()', '\n')
-elif any(int(oct) not in range(1,255) for oct in ip_l):
+    print('Wrong IP.', 'One or more octets are not is digit.', '\n')
+elif any(int(oct) not in range(0,256) for oct in ip_l):
     print('-' * 70, '\n')
-    print('Неверный IP-адрес Not in range', '\n')
+    print('Wrong IP.', 'One or more octets are not in range 0-255.', '\n')
 else: 
     print('-' * 70, '\n')
     if int(ip_l[0]) in range(1,224):
